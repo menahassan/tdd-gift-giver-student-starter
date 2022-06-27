@@ -9,8 +9,8 @@ router.post('/pairs', function (req, res, next) {
     const pairs = GiftExchangeModel.pairs(names)
     res.send({pairs});
   }
-  catch{
-    next(new BadRequestError())
+  catch(err){
+    next(new BadRequestError(err))
   }
 })
 
@@ -21,8 +21,8 @@ router.post('/traditional', function (req, res) {
 
     res.send({traditional});
   }
-  catch{
-    next(new BadRequestError())
+  catch(err){
+    next(new BadRequestError(err))
   }
   })
 

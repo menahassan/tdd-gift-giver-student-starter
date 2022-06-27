@@ -26,6 +26,8 @@ app.use((error, req, res, next) => {
     message: message || 'Something wen\'t wrong in the application'
   }
 
+  console.log(status)
+
   res.status(status).send({error: errorObject})
 })
 
